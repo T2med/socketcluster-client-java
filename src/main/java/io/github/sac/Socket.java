@@ -152,6 +152,8 @@ public class Socket extends Emitter {
             public void onTextMessage(WebSocket websocket, String text) throws Exception {
                 if (text == null) {
                     websocket.sendText("");
+                } else if (text.equalsIgnoreCase("#1")) {
+                    websocket.sendText("#2");
                 }
                 super.onTextMessage(websocket, text);
             }
